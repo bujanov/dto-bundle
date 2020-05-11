@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="bujanov.dto_manager" class="Bujanov\DtoBundle\DataTransferManager" public="true">
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="bujanov.doctrine_entity.property_handler" class="Bujanov\DtoBundle\Handler\DoctrineEntity\PropertyHandler" public="true" />
+        <service id="bujanov.doctrine_entity.relation_handler" class="Bujanov\DtoBundle\Handler\DoctrineEntity\RelationHandler" public="true">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+        <service id="bujanov.doctrine_entity.relations_handler" class="Bujanov\DtoBundle\Handler\DoctrineEntity\RelationsHandler" public="true">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+
+        <service id="Bujanov\DtoBundle\DataTransferManagerInterface" alias="bujanov.dto_manager" public="true"/>
+        <service id="Bujanov\DtoBundle\Handler\DoctrineEntity\PropertyHandler" alias="bujanov.doctrine_entity.property_handler" public="true"/>
+        <service id="Bujanov\DtoBundle\Handler\DoctrineEntity\RelationHandler" alias="bujanov.doctrine_entity.relation_handler" public="true"/>
+        <service id="Bujanov\DtoBundle\Handler\DoctrineEntity\RelationsHandler" alias="bujanov.doctrine_entity.relations_handler" public="true"/>
+    </services>
+
+</container>

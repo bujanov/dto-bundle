@@ -15,7 +15,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('dto_bundle');
+        $treeBuilder = new TreeBuilder('dto');
 
         return $treeBuilder;
     }
