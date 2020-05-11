@@ -3,7 +3,9 @@
     "description": "Symfony simple data transfer object bundle",
     "version": "0.8.0",
     "type": "symfony-bundle",
-    "license": "proprietary",
+    "keywords": ["dto", "rest", "api", "bundle", "symfony"],
+    "license": "MIT",
+    "authors": [{"name": "Bujanov Sergey", "email": "sabujanov@gmail.com"}],
     "require": {
         "php": "^7.2.5",
         "ext-ctype": "*",
